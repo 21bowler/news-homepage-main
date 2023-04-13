@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root {
+    /* primary colors */
+    --Soft-orange: hsl(35, 77%, 62%);
+    --Soft-red: hsl(5, 85%, 63%);
+    /* secondary colors */
+    --Off-white: hsl(36, 100%, 99%);
+    --Grayish-blue: hsl(233, 8%, 79%);
+    --Dark-grayish-blue: hsl(236, 13%, 42%);
+    --Very-dark-blue: hsl(240, 100%, 5%);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--Off-white);
+    min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15%;
+    position: relative;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid; */
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: var(--Dark-grayish-blue);
+    transition: 300ms ease;
+}
+header ul li a:hover{
+    color: var(--Soft-red);
+}
+
+#menu{
+    display: none;
+    align-self: center;
+    cursor: pointer;
+    font-size: 3rem;
+    z-index: 1;
+}
+
+/* body styling */
+
+section {
+    padding: 20px 15%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+}
+
+.web-image {
+    width: 700px;
+    /* display: block; */
+    /* overflow: hidden; */
+    grid-column: span 2;
+    border: 1px solid;
+}
+
+.dark-blue {
+    background-color: var(--Very-dark-blue);
+    color: var(--Off-white);
+    padding: 15px 20px;
+    grid-row: span 2;
+    line-height: 1.5rem;
+}
+.dark-blue h1 {
+    color: var(--Soft-orange);
+    margin:0 0 15px ;
+    font-size: 2rem;
+    padding-top: 10px;
+}
+.dark-blue .small-heading{
+    font-weight: 700;
+    margin: 10px 0;
+    display: block;
+    cursor: pointer;
+    transition: 300ms ease;
+}
+.dark-blue .small-heading:hover{
+    color: var(--Soft-orange);
+}
+.side-content {
+    border-bottom: 1px solid;
+    padding: 20px 0;
+    /* border: 1px solid; */
+}
+.side-content-last{
+    padding-bottom: 10px;
+}
+
+/* Bright future styling */
+.future{
+    color: var(--Very-dark-blue);
+    font-weight: 800;
+    font-size: 2.3rem;
+}
+
+/** we dive next evolution styling */
+.evolution {
+    /* border: 1px solid; */
+    padding: 15px;
+}
+.evolution p{
+    margin-bottom: 20px;
+}
+.btn-more{
+    background-color: var(--Soft-red);
+    color: var(--Off-white);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    transition: 300ms ease;
+}
+.btn-more:hover{
+    background-color: var(--Very-dark-blue);
+}
+
+/** last part styling */
+
+.flex{
+    display: flex;
+    gap: 20px;
+    padding: 10px 15px;
+    /* border: 1px solid; */
+}
+
+.flex img{
+    height: 60%;
+}
+.flex h3{
+    color: var(--Grayish-blue);
+    padding-bottom: 10px;
+}
+.flex-item {
+    /* border: 1px solid; */
+    line-height: 1.5rem;
+}
+.flex-heading{
+    font-weight: 700;
+    cursor: pointer;
+    transition: 300ms ease;
+}
+.flex-heading:hover{
+    color: var(--Soft-red);
+}
+
+/* tablet and ipad responsiveness */
+
+/* medium screens */
+@media screen and (max-width: 1024px){
+    header{
+        padding: 10px 3%;
+        transition: .3s ease;
+    }
+    section{
+        padding: 20px 3%;
+        transition: .3s ease;
+    }
+}
+
+@media screen and (max-width: 800px){
+    header{
+        padding: 10px 5%;
+        transition: 300ms ease;
+    }
+    section{
+        grid-template-columns: repeat(2, 1fr);
+        padding: 20px 5%;
+        transition: 300ms ease;
+    }
+}
+@media screen and (max-width: 600px){
+    body{
+        overflow-x: hidden;
+    }
+    header ul{
+        flex-direction: column;
+        gap: 30px;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: -100%;
+        /* !here you can use the transform property or right to toggle the navbar */
+        /* transform: translatex(100%); */
+        width: 50%;
+        background-color: var(--Off-white);
+        padding: 150px 30px;
+        transition: .4s ease-in-out;
+    }
+    header ul.active {
+        /* !here you can use the transform property or right to toggle the navbar */
+        /* transform: translateX(0); */
+        right: 0;
+    }
+    
+    #menu{
+        display: block;
+    }
+    section{
+        padding: 20px 5%;
+        grid-template-columns: 1fr;
+    }
+    .web-image{
+        grid-column: unset;
+        width: 500px;
+        order: 1;
+    }
+    .future{
+        order: 2;
+    }
+    .evolution{
+        order: 3;
+    }
+    .dark-blue{
+        order: 4;
+    }
+    .flex{
+        order: 5;
+    }
+    
+}

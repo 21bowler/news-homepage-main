@@ -22,6 +22,7 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--Off-white);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* Header styling */

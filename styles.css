@@ -202,9 +202,9 @@ section {
         height: 100vh;
         position: absolute;
         top: 0;
-        right: -100%;
+        right: 0;
         /* !here you can use the transform property or right to toggle the navbar */
-        /* transform: translatex(100%); */
+        transform: translatex(100%);
         width: 50%;
         background-color: var(--Off-white);
         padding: 150px 30px;
@@ -212,8 +212,8 @@ section {
     }
     header ul.active {
         /* !here you can use the transform property or right to toggle the navbar */
-        /* transform: translateX(0); */
-        right: 0;
+        transform: translateX(0);
+        /* right: 0; */
     }
     
     #menu{
